@@ -1,49 +1,59 @@
-# Starlight Starter Kit: Basics
+# Lore Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+[![Deployed on Cloudflare Pages](https://img.shields.io/badge/deployed%20on-Cloudflare%20Pages-orange)](https://lore.varalys.com)
+
+Documentation website for [Lore](https://github.com/varalys/lore), the reasoning history tool for code.
+
+**Live site:** [lore.varalys.com](https://lore.varalys.com)
+
+## Stack
+
+- [Astro](https://astro.build) + [Starlight](https://starlight.astro.build)
+- Hosted on [Cloudflare Pages](https://pages.cloudflare.com)
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Structure
 
 ```
-npm create astro@latest -- --template starlight
+src/content/docs/
+├── getting-started/    # Installation, quick start
+├── guides/             # Feature guides (linking, search, MCP, etc.)
+├── commands/           # CLI command reference
+├── reference/          # Configuration, supported tools, API
+└── about/              # Architecture, FAQ, security, changelog
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Contributing
 
-## 🚀 Project Structure
+Content is written in Markdown (`.md`) files. Each file in `src/content/docs/` becomes a page on the site.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+To add or edit documentation:
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+1. Fork this repository
+2. Make your changes
+3. Run `npm run build` to verify the build passes
+4. Submit a pull request
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Related
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+- [varalys/lore](https://github.com/varalys/lore) - Main Lore repository
+- [docs.rs/lore-cli](https://docs.rs/lore-cli) - API documentation
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## License
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+MIT
