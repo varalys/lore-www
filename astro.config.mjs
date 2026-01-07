@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://lore-cli.pages.dev',
+	site: 'https://lore.varalys.com',
 	integrations: [
 		starlight({
 			title: 'Lore',
