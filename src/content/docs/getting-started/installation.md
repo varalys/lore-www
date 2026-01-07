@@ -52,4 +52,4 @@ lore --version
 
 ## Next Steps
 
-Run the [Quick Start](/lore-www/getting-started/quick-start/) guide to configure Lore and import your first sessions.
+Run the [Quick Start](/getting-started/quick-start/) guide to configure Lore and import your first sessions.

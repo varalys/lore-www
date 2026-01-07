@@ -79,6 +79,6 @@ lore show 7f3a2b1
 
 ## Next Steps
 
-- [Linking Sessions to Commits](/lore-www/guides/linking/) - Learn about manual and automatic linking
-- [Searching Sessions](/lore-www/guides/search/) - Find conversations across your history
-- [MCP Server Integration](/lore-www/guides/mcp/) - Let AI tools query your session history
+- [Linking Sessions to Commits](/guides/linking/) - Learn about manual and automatic linking
+- [Searching Sessions](/guides/search/) - Find conversations across your history
+- [MCP Server Integration](/guides/mcp/) - Let AI tools query your session history

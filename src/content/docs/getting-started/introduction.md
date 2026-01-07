@@ -34,5 +34,5 @@ All data stays on your machine. There is no cloud dependency.
 
 ## Next Steps
 
-- [Installation](/lore-www/getting-started/installation/) - Install Lore on your system
-- [Quick Start](/lore-www/getting-started/quick-start/) - Get up and running in 5 minutes
+- [Installation](/getting-started/installation/) - Install Lore on your system
+- [Quick Start](/getting-started/quick-start/) - Get up and running in 5 minutes

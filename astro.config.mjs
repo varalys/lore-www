@@ -4,8 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://varalys.github.io',
-	base: '/lore-www',
+	site: 'https://lore.varalys.com', // Update to your actual domain
 	integrations: [
 		starlight({
 			title: 'Lore',
