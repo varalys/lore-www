@@ -46,6 +46,16 @@ export default defineConfig({
 						{ label: 'Supported Tools', slug: 'reference/supported-tools' },
 						{ label: 'Configuration', slug: 'reference/configuration' },
 						{ label: 'Data Storage', slug: 'reference/data-storage' },
+						{ label: 'API Reference', slug: 'reference/api' },
+					],
+				},
+				{
+					label: 'About',
+					items: [
+						{ label: 'Architecture', slug: 'about/architecture' },
+						{ label: 'FAQ & Troubleshooting', slug: 'about/faq' },
+						{ label: 'Security', slug: 'about/security' },
+						{ label: 'Changelog', slug: 'about/changelog' },
 					],
 				},
 			],

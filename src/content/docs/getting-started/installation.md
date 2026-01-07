@@ -32,9 +32,24 @@ cargo install lore-cli
 Download the latest binary from [GitHub Releases](https://github.com/varalys/lore/releases) and add it to your PATH.
 
 Available binaries:
-- `lore-x86_64-apple-darwin` (macOS Intel)
-- `lore-aarch64-apple-darwin` (macOS Apple Silicon)
-- `lore-x86_64-unknown-linux-gnu` (Linux x86_64)
+- `lore-aarch64-apple-darwin.tar.gz` (macOS Apple Silicon)
+- `lore-x86_64-apple-darwin.tar.gz` (macOS Intel)
+- `lore-aarch64-unknown-linux-gnu.tar.gz` (Linux ARM64)
+- `lore-x86_64-unknown-linux-gnu.tar.gz` (Linux x86_64)
+
+### Verify Checksum
+
+Each release includes SHA256 checksums. Verify your download:
+
+```bash
+# macOS
+shasum -a 256 lore-aarch64-apple-darwin.tar.gz
+
+# Linux
+sha256sum lore-aarch64-unknown-linux-gnu.tar.gz
+```
+
+Compare the output with the checksum shown on the [releases page](https://github.com/varalys/lore/releases).
 
 ## From Source
 
