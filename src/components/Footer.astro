@@ -1,0 +1,30 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+<footer class="custom-footer">
+  <p>
+    &copy; {new Date().getFullYear()} Varalys.
+    <a href="https://github.com/varalys/lore">GitHub</a> &middot;
+    <a href="/about/security/">Security</a> &middot;
+    Apache 2.0
+  </p>
+</footer>
+
+<style>
+  .custom-footer {
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--sl-color-gray-3);
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+  .custom-footer a {
+    color: var(--sl-color-gray-2);
+  }
+  .custom-footer a:hover {
+    color: var(--sl-color-white);
+  }
+</style>

@@ -13,6 +13,9 @@ export default defineConfig({
 				alt: 'Lore',
 			},
 			description: 'Reasoning history for code. Capture AI coding sessions and link them to git commits.',
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/varalys/lore' },
 			],
