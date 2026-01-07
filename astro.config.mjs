@@ -4,10 +4,14 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://lore.varalys.com', // Update to your actual domain
+	site: 'https://lore-cli.pages.dev',
 	integrations: [
 		starlight({
 			title: 'Lore',
+			logo: {
+				src: './src/assets/logo.svg',
+				alt: 'Lore',
+			},
 			description: 'Reasoning history for code. Capture AI coding sessions and link them to git commits.',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/varalys/lore' },
