@@ -1,0 +1,48 @@
+---
+title: Lore
+description: Reasoning history for code. Capture AI coding sessions and link them to git commits.
+template: splash
+hero:
+  tagline: Git captures code history. Lore captures reasoning history.
+  actions:
+    - text: Get Started
+      link: /lore-www/getting-started/introduction/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/varalys/lore
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why Lore?
+
+When you use AI coding tools, the conversation contains valuable context: the prompts you wrote, approaches you tried, and decisions you made. Git captures the final code, but not the reasoning behind it. Lore preserves both.
+
+<CardGrid>
+  <Card title="Capture" icon="pencil">
+    Import sessions from Claude Code, Aider, Gemini CLI, and more. Run the daemon for real-time capture.
+  </Card>
+  <Card title="Link" icon="random">
+    Connect AI sessions to git commits. See which conversation produced any commit.
+  </Card>
+  <Card title="Search" icon="magnifier">
+    Full-text search across all your AI conversations. Find that solution you discussed months ago.
+  </Card>
+  <Card title="Blame" icon="information">
+    Trace any line of code back to the AI session that created it.
+  </Card>
+</CardGrid>
+
+## Quick Install
+
+```bash
+# macOS
+brew install varalys/tap/lore
+
+# From crates.io
+cargo install lore-cli
+```
+
+Then run `lore init` for guided setup.
