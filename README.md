@@ -53,7 +53,3 @@ To add or edit documentation:
 
 - [varalys/lore](https://github.com/varalys/lore) - Main Lore repository
 - [docs.rs/lore-cli](https://docs.rs/lore-cli) - API documentation
-
-## License
-
-MIT
