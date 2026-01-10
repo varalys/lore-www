@@ -19,6 +19,16 @@ This also enables running Lore as a background service:
 brew services start lore
 ```
 
+## Arch Linux (AUR)
+
+Install from the AUR using your preferred helper:
+
+```bash
+yay -S lore-cli-bin
+```
+
+Or with paru, pikaur, or any other AUR helper. See [lore-cli-bin on AUR](https://aur.archlinux.org/packages/lore-cli-bin).
+
 ## From crates.io
 
 If you have Rust installed:
