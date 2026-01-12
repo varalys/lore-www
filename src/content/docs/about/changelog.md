@@ -5,6 +5,25 @@ description: Release history and version notes
 
 All notable changes to Lore are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.8] - 2026-01-12
+
+### Added
+
+- **Forward auto-linking** - Daemon automatically links sessions to commits when sessions end
+  - No git hooks or per-repo setup required
+  - Finds commits across all branches made during session time window
+- `lore link --current` flag to manually link active sessions to HEAD
+
+### Fixed
+
+- Daemon now re-imports updated sessions and triggers auto-linking on updates
+- Fixed incorrect watcher dispatch that caused Claude JSONL files to be parsed as aider sessions
+  - Now uses path-based dispatch to match files to their owning watcher
+- Fixed daemon logging - logs are now written to `~/.lore/daemon.log`
+  - Previously, console logging initialization prevented file logging from initializing
+
+---
+
 ## [0.1.7] - 2026-01-10
 
 ### Added
