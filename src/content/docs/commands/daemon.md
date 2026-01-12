@@ -86,7 +86,7 @@ lore daemon logs --follow
 lore daemon logs --lines 100
 ```
 
-Log location: `~/.lore/logs/`
+Log location: `~/.lore/daemon.log`
 
 ## How It Works
 

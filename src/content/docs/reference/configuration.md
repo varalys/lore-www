@@ -64,4 +64,4 @@ lore --no-init sessions --format json
 
 - **Config**: `~/.lore/config.yaml`
 - **Database**: `~/.lore/lore.db`
-- **Logs**: `~/.lore/logs/`
+- **Logs**: `~/.lore/daemon.log`

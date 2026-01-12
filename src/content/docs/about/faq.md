@@ -146,7 +146,7 @@ lore daemon start --foreground
 
 The daemon should use minimal memory (event-based watching). If you see high usage:
 
-1. Check log size: `du -h ~/.lore/logs/`
+1. Check log size: `du -h ~/.lore/daemon.log`
 2. Restart: `lore daemon stop && lore daemon start`
 3. File an issue if it persists
 
