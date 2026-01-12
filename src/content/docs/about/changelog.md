@@ -5,6 +5,16 @@ description: Release history and version notes
 
 All notable changes to Lore are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.9] - 2026-01-12
+
+### Fixed
+
+- `lore daemon start` now uses systemctl/launchctl when a service file exists, matching `lore daemon stop` behavior
+  - Previously, daemon start would spawn a standalone process even if a systemd/launchd service was installed
+  - This caused confusion where the daemon ran outside of service manager control
+
+---
+
 ## [0.1.8] - 2026-01-12
 
 ### Added
