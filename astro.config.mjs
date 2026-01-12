@@ -56,6 +56,7 @@ export default defineConfig({
 					label: 'About',
 					items: [
 						{ label: 'Architecture', slug: 'about/architecture' },
+						{ label: 'Contributing', slug: 'about/contributing' },
 						{ label: 'FAQ & Troubleshooting', slug: 'about/faq' },
 						{ label: 'Security', slug: 'about/security' },
 						{ label: 'Changelog', slug: 'about/changelog' },

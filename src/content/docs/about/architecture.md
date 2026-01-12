@@ -37,13 +37,15 @@ Watchers implement a common trait:
 
 ```rust
 pub trait Watcher {
-    fn name(&self) -> &str;
-    fn session_paths(&self) -> Vec<PathBuf>;
-    fn parse_session(&self, path: &Path) -> Result<Session>;
+    fn info(&self) -> WatcherInfo;
+    fn is_available(&self) -> bool;
+    fn find_sources(&self) -> Result<Vec<PathBuf>>;
+    fn parse_source(&self, path: &Path) -> Result<Vec<(Session, Vec<Message>)>>;
+    fn watch_paths(&self) -> Vec<PathBuf>;
 }
 ```
 
-New tools can be supported by implementing this trait.
+New tools can be supported by implementing this trait. For VS Code extensions using Cline-style storage, use the generic `VsCodeExtensionWatcher` which requires only a configuration struct. See the [Contributing guide](/about/contributing) for details.
 
 ### Storage
 
