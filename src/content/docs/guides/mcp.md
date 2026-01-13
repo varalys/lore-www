@@ -52,7 +52,7 @@ Restart Claude Desktop after editing.
 Add Lore as an MCP server:
 
 ```bash
-codex mcp add lore
+codex mcp add lore -- lore mcp serve
 ```
 
 Or manually edit `~/.codex/config.toml`:
