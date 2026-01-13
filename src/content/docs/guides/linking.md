@@ -28,6 +28,38 @@ lore show --commit abc123
 lore show <session-id>
 ```
 
+## Automatic Linking
+
+If you run the [Lore daemon](/guides/daemon/), sessions are automatically linked when they end. No manual intervention needed.
+
+## Retroactive Linking
+
+### Auto-link a Single Commit
+
+Use `--auto` to find sessions that likely produced a commit:
+
+```bash
+# Preview suggestions
+lore link --auto
+
+# Apply suggestions
+lore link --auto --yes
+```
+
+### Backfill All Sessions
+
+Use `--backfill` to scan all ended sessions and link commits from their time windows:
+
+```bash
+# Preview all backfill suggestions
+lore link --auto --backfill
+
+# Apply all suggestions
+lore link --auto --backfill --yes
+```
+
+This is a **one-time migration tool** for when you first install Lore and want to link your existing session history. Once you have the daemon running, it handles linking automatically and backfill is no longer needed.
+
 ## Git Hooks
 
 Install hooks to prompt for linking after each commit:
@@ -42,6 +74,7 @@ The post-commit hook will prompt you to link recent sessions to your commit.
 
 ## Best Practices
 
-- Link sessions immediately after committing while context is fresh
-- Use session prefixes (first 8 characters) for convenience
-- One session can link to multiple commits (and vice versa)
+- **Run the daemon**: Automatic linking is the easiest approach
+- **Backfill on install**: Run `lore link --auto --backfill` after first `lore import`
+- **Use session prefixes**: First 8 characters are usually enough
+- **Link generously**: One session can link to multiple commits (and vice versa)
