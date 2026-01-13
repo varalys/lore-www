@@ -47,6 +47,45 @@ Edit `~/.claude/claude_desktop_config.json`:
 
 Restart Claude Desktop after editing.
 
+### Codex CLI
+
+Add Lore as an MCP server:
+
+```bash
+codex mcp add lore
+```
+
+Or manually edit `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.lore]
+command = "lore"
+args = ["mcp", "serve"]
+```
+
+### Gemini CLI
+
+Add Lore as an MCP server:
+
+```bash
+gemini mcp add lore -- lore mcp serve
+```
+
+Or manually edit `~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "lore": {
+      "command": "lore",
+      "args": ["mcp", "serve"]
+    }
+  }
+}
+```
+
+You can also add project-level configuration in `.gemini/settings.json`.
+
 ## Available Tools
 
 The MCP server exposes these tools to AI assistants:
