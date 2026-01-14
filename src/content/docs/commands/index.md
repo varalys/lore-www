@@ -54,6 +54,7 @@ This section documents all Lore commands. Run `lore --help` for a quick overview
 | `lore config get` | Get a config value |
 | `lore config set` | Set a config value |
 | `lore status` | Show system status |
+| `lore doctor` | Diagnose installation issues |
 
 ## Integration
 

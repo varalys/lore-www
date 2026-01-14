@@ -5,6 +5,28 @@ description: Release history and version notes
 
 All notable changes to Lore are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.10] - 2026-01-13
+
+### Added
+
+- **`lore doctor`** - Diagnose installation and configuration issues
+  - Checks config, database, daemon, watchers, and MCP server
+  - Supports text and JSON output formats
+  - Exit codes: 0 (OK), 1 (warnings), 2 (errors)
+- **`lore link --auto`** - Re-enabled with preview-first UX
+  - Shows proposed links and requires `--yes` to apply
+  - Uses heuristics: time proximity, file overlap, branch matching
+- **`lore link --auto --backfill`** - Bulk retroactive linking
+  - Scans all ended sessions and links commits from their time windows
+  - One-time migration tool for existing session history
+
+### Fixed
+
+- Path matching now avoids prefix collisions (`/project` no longer matches `/project-old`)
+- macOS launchd treats "service already loaded" as success, preventing duplicate daemon spawns
+
+---
+
 ## [0.1.9] - 2026-01-12
 
 ### Fixed
