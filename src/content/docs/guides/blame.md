@@ -19,18 +19,22 @@ This will:
 ## Example Output
 
 ```
-Line 42 of src/main.rs
-  Content: pub fn initialize_database() -> Result<Database> {
-  Commit:  a1b2c3d (2025-01-05)
-  Author:  Jane Developer
-  Message: feat: add database initialization
+$ lore blame src/auth.rs:42
 
-Linked Sessions:
-  Session 7f3a2b1 (claude-code, 23 messages)
+Commit:
+  a1b2c3d4  <username> 2025-12-15 14:30
+  feat: add rate limiting to login endpoint
 
-Relevant Excerpts:
-  [User] Can you help me write a function to initialize the database?
-  [Assistant] I'll create an initialize_database function that...
+Line content:
+      if attempts > 5 { return Err(RateLimitExceeded) }
+
+Linked sessions (1):
+
+  f8e7d6c5  claude-code (127 messages)
+    Started: 2025-12-15 13:45
+    Relevant context:
+      ...decided on 5 attempts as the threshold based on industry standards...
+      Let me add rate limiting to prevent brute force attacks.
 ```
 
 ## Output Formats
