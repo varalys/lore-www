@@ -15,10 +15,8 @@ export default defineConfig({
 			description: 'Reasoning history for code. Capture AI coding sessions and link them to git commits.',
 			components: {
 				Footer: './src/components/Footer.astro',
+				SocialIcons: './src/components/HeaderActions.astro',
 			},
-			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/varalys/lore' },
-			],
 			sidebar: [
 				{
 					label: 'Getting Started',
