@@ -27,6 +27,16 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Cloud',
+					items: [
+						{ label: 'Overview', slug: 'cloud/overview' },
+						{ label: 'Pricing', slug: 'cloud/pricing' },
+						{ label: 'Authentication', slug: 'cloud/authentication' },
+						{ label: 'Pushing & Pulling', slug: 'cloud/sync' },
+						{ label: 'Encryption', slug: 'cloud/encryption' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						{ label: 'Linking Sessions to Commits', slug: 'guides/linking' },
