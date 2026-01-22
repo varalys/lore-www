@@ -47,7 +47,7 @@ Your Machine                    Lore Cloud                    Other Machine
 | Plan | Price | Sessions | Features |
 |------|-------|----------|----------|
 | **Free** | $0/month | 50 sessions | Sync, encryption, dashboard |
-| **Pro** | $8/month | Unlimited | Everything in Free |
+| **Pro** | $5.99/month | Unlimited | Everything in Free |
 
 [Get Started →](https://app.lore.varalys.com/sign-up)
 

@@ -9,7 +9,7 @@ Lore is open source and free to use locally. Cloud sync is available with free a
 
 |  | OSS | Free | Pro | Teams | Enterprise |
 |---|:---:|:---:|:---:|:---:|:---:|
-| **Price** | Free | $0/mo | $8/mo | Coming soon | Coming soon |
+| **Price** | Free | $0/mo | $5.99/mo | Coming soon | Coming soon |
 | **Local sessions** | Unlimited | Unlimited | Unlimited | — | — |
 | **Cloud sync** | — | 50 sessions | Unlimited | — | — |
 | **E2E encryption** | — | Yes | Yes | — | — |
@@ -44,7 +44,7 @@ Everything in OSS, plus cloud sync for up to 50 sessions:
 
 [Sign Up Free](https://app.lore.varalys.com/sign-up)
 
-## Pro — $8/month
+## Pro — $5.99/month
 
 Everything in Free, with unlimited cloud storage:
 
