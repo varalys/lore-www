@@ -46,9 +46,10 @@ Everything in OSS, plus cloud sync for up to 50 sessions:
 
 ## Pro — $5.99/month
 
-Everything in Free, with unlimited cloud storage:
+Everything in Free, plus:
 
 - Unlimited synced sessions
+- 1 GB storage
 - Priority support
 
 [Upgrade to Pro](https://app.lore.varalys.com/sign-up)
