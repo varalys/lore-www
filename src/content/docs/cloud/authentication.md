@@ -13,6 +13,18 @@ lore login
 
 This opens your browser to sign in. After authenticating, credentials are stored locally and the CLI receives an API key for cloud operations.
 
+### Encryption Passphrase Setup
+
+After login, you'll be prompted to set up your encryption passphrase:
+
+```
+Set up encryption passphrase now for auto-sync? [Y/n]
+```
+
+If you choose yes, you can enter your passphrase immediately. This enables the [daemon](/guides/daemon) to automatically sync your sessions to the cloud every 4 hours without further prompts.
+
+If you skip this step, you'll be prompted for your passphrase on your first `lore cloud push` instead.
+
 ### Credential Storage
 
 On first login, you'll be asked how to store credentials:

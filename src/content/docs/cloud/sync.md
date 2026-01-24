@@ -104,7 +104,10 @@ Local:
   Total sessions:    56
   Pending sync:      3
   Last sync:         3 hours ago
+  Next auto-sync:    in 2 hours 15 minutes
 ```
+
+The "Next auto-sync" line shows when the [daemon](/guides/daemon) will automatically sync your sessions. If the daemon is not running or encryption is not configured, this will show "Not scheduled".
 
 ## How It Works
 
