@@ -15,10 +15,8 @@ export default defineConfig({
 			description: 'Reasoning history for code. Capture AI coding sessions and link them to git commits.',
 			components: {
 				Footer: './src/components/Footer.astro',
+				SocialIcons: './src/components/HeaderActions.astro',
 			},
-			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/varalys/lore' },
-			],
 			sidebar: [
 				{
 					label: 'Getting Started',
@@ -26,6 +24,16 @@ export default defineConfig({
 						{ label: 'Introduction', slug: 'getting-started/introduction' },
 						{ label: 'Installation', slug: 'getting-started/installation' },
 						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
+					],
+				},
+				{
+					label: 'Cloud',
+					items: [
+						{ label: 'Overview', slug: 'cloud/overview' },
+						{ label: 'Pricing', slug: 'cloud/pricing' },
+						{ label: 'Authentication', slug: 'cloud/authentication' },
+						{ label: 'Pushing & Pulling', slug: 'cloud/sync' },
+						{ label: 'Encryption', slug: 'cloud/encryption' },
 					],
 				},
 				{
