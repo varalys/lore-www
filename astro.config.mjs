@@ -15,6 +15,7 @@ export default defineConfig({
 			description: 'Reasoning history for code. Capture AI coding sessions and link them to git commits.',
 			components: {
 				Footer: './src/components/Footer.astro',
+				Header: './src/components/Header.astro',
 				SocialIcons: './src/components/HeaderActions.astro',
 			},
 			sidebar: [
