@@ -19,8 +19,9 @@ The wizard will:
 3. Let you choose which watchers to enable
 4. Offer to import existing sessions
 5. If Aider is enabled, offer to scan additional directories for aider projects
-6. Offer to install shell completions
-7. Offer to start the background service
+6. Offer to configure a summary provider (for LLM-powered session summaries)
+7. Offer to install shell completions
+8. Offer to start the background service
 
 ## Manual Setup
 

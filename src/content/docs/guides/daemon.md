@@ -77,6 +77,7 @@ systemctl --user status lore.service
 - Updates the database in real-time
 - Tracks branch changes during sessions
 - **Automatically links sessions to commits** when sessions end
+- **Automatically generates session summaries** via LLM (if configured)
 - **Automatically syncs sessions to cloud** every 4 hours (if logged in)
 
 ## Automatic Cloud Sync
@@ -113,6 +114,63 @@ You can always sync manually without waiting:
 ```bash
 lore cloud sync
 ```
+
+## Automatic Session Summaries
+
+When a summary provider is configured and auto-summarization is enabled, the daemon generates LLM-powered summaries when sessions end. This runs on a background thread so it does not block session capture.
+
+### Setup
+
+```bash
+# Configure a summary provider (guided wizard with hidden key input)
+lore init --force
+
+# Enable auto-summarization
+lore config set summary_auto true
+
+# Optional: set minimum message count (default: 10)
+lore config set summary_auto_threshold 10
+```
+
+### How It Works
+
+1. Daemon detects a session has ended
+2. Checks that `summary_auto` is enabled and session meets the message threshold
+3. Skips sessions that already have a summary
+4. Sends the conversation transcript to the configured LLM provider
+5. Stores the generated summary in the database
+
+### Viewing Summaries
+
+Sessions with summaries show a `[S]` indicator in `lore sessions`:
+
+```
+ID            STARTED           MESSAGES  BRANCH   DIRECTORY
+abc12345 [S]  2026-02-27 10:30       234  main     myapp
+```
+
+View the full summary:
+
+```bash
+lore summarize abc123 --show
+```
+
+### Monitoring
+
+Check the daemon logs for summary activity:
+
+```bash
+lore daemon logs | grep -i "summar"
+```
+
+You should see messages like:
+```
+Auto-generated summary for session abc12345
+```
+
+If summarization is skipped (e.g., provider not configured, session too short), it is logged at debug level and does not produce warnings.
+
+See [Configuration > Session Summaries](/reference/configuration/#session-summaries) for all settings.
 
 ## Automatic Session Linking
 

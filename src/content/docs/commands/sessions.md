@@ -33,11 +33,13 @@ lore sessions --format json
 ## Sample Output
 
 ```
-ID        STARTED           MESSAGES  BRANCH                    DIRECTORY
-c9731a91  2025-12-25 17:52       566  main -> feat/auth -> main myapp
-24af9690  2025-12-22 19:13      1910  feat/phase-0-foundati...  lore
-8b2f1c3d  2025-12-20 14:30       234  main                      backend
+ID            STARTED           MESSAGES  BRANCH                    DIRECTORY
+c9731a91 [S]  2025-12-25 17:52       566  main -> feat/auth -> main myapp
+24af9690      2025-12-22 19:13      1910  feat/phase-0-foundati...  lore
+8b2f1c3d [S]  2025-12-20 14:30       234  main                      backend
 ```
+
+The `[S]` indicator marks sessions that have a summary. Use `lore summarize <id> --show` to view it.
 
 The `BRANCH` column shows branch transitions during the session. Long branch names are truncated.
 
