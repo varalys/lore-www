@@ -5,7 +5,7 @@ description: Release history and version notes
 
 All notable changes to Lore are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [0.1.12] - 2026-02-27
+## [0.1.13] - 2026-02-27
 
 ### Added
 
