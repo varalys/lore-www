@@ -50,9 +50,29 @@ lore link <session-id>
 lore show --commit HEAD
 ```
 
+## Syncing Reasoning History
+
+Optionally share and back up your sessions over git. Sync is encrypted end to end, with no server and no account.
+
+```bash
+# Set a passphrase for this repository's store
+lore sync setup
+
+# Fetch, encrypt, and push reasoning history
+lore sync
+```
+
+Install the pre-push hook to sync automatically on every `git push`:
+
+```bash
+lore hooks install
+```
+
+See the [Syncing guide](/guides/sync/) for the global store and team sharing.
+
 ## Starting the Daemon
 
-For real-time session capture:
+The daemon is optional. It captures sessions in real time and auto-links them, but it is not required for sync.
 
 ```bash
 # macOS with Homebrew

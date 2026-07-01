@@ -29,8 +29,9 @@ Git captures **what** changed. Lore captures **how and why** it changed.
 1. **Capture**: Lore reads session data from AI coding tools and stores it locally
 2. **Link**: Connect sessions to git commits (manually or via hooks)
 3. **Query**: Search, browse, and trace code back to conversations
+4. **Sync**: Optionally share and back up reasoning history over git, encrypted end to end
 
-All data stays on your machine. There is no cloud dependency.
+All data stays on your machine by default. When you want to share reasoning with a team or back it up across machines, [sync](/guides/sync/) rides on your existing git remotes. There is no server and no account.
 
 ## Next Steps
 

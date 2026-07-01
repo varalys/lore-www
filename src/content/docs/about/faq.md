@@ -22,7 +22,7 @@ See [Supported Tools](/reference/supported-tools/) for details.
 
 ### Where is my data stored?
 
-All data stays on your machine:
+All data stays on your machine by default:
 
 ```
 ~/.lore/
@@ -31,15 +31,27 @@ All data stays on your machine:
 └── logs/         # Daemon logs
 ```
 
-There is no cloud sync or external service in the current version.
+If you enable [sync](/guides/sync/), encrypted sessions are also written to git stores you control (the per-repo ref `refs/lore/sessions` and/or the global store at `~/.lore/sync`).
 
 ### Does Lore upload my sessions anywhere?
 
-No. Lore is entirely local. Your session data never leaves your machine.
+Only if you turn on sync, and only to git remotes you configure. Sync is opt-in. When enabled, sessions are encrypted on your machine before they touch git, so the git host cannot read them. With sync off, your data never leaves your machine.
+
+### What happened to Lore Cloud?
+
+Lore Cloud, the hosted sync service, has been retired in favor of [git-ref sync](/guides/sync/). Sync now runs over your own git remotes with end-to-end encryption. There is no server, no account, and no per-seat fee.
+
+To migrate:
+
+1. Pull down anything you still need from the old service while it remains reachable.
+2. Run `lore sync setup` in a repo (or `lore sync --global setup` for your personal aggregate) to set a passphrase.
+3. Run `lore sync` to push your sessions to git. Install the pre-push hook with `lore hooks install` to keep it automatic.
+
+The old `lore login` and `lore cloud ...` commands are gone.
 
 ### Can I use Lore with private/proprietary code?
 
-Yes. Since all data is local, Lore is safe for any codebase.
+Yes. Local data never leaves your machine, and sync is encrypted end to end before it reaches any git host, so Lore is safe for any codebase.
 
 ## Installation
 

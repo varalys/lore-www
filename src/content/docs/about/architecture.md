@@ -182,6 +182,33 @@ Tools exposed via MCP:
 - `lore_get_context` - Recent sessions for repo
 - `lore_get_linked_sessions` - Sessions for a commit
 
+### Sync
+
+Lore syncs reasoning history over git, not through a hosted service. There is no server. Encrypted sessions travel through the git remotes you already use.
+
+There are two stores:
+
+```
+┌──────────────────────────┐        ┌──────────────────────────┐
+│   Per-repo store         │        │   Global personal store  │
+│                          │        │                          │
+│  project/.git            │        │  ~/.lore/sync (git repo) │
+│    refs/lore/sessions    │        │    synced to a private   │
+│    (this repo's sessions)│        │    remote you configure  │
+│    over the repo's remote│        │    (all your sessions)   │
+└───────────┬──────────────┘        └────────────┬─────────────┘
+            │                                     │
+            ▼                                     ▼
+   encrypt (AES-256-GCM)                 encrypt (AES-256-GCM)
+```
+
+- **Per-repo store**: Sessions for a project live inside that project's own git repository under `refs/lore/sessions`, a ref outside `refs/heads` that is never checked out. It carries only that repo's sessions and rides on the repo's existing remote, so reasoning travels with the code.
+- **Global personal store**: A standalone git repo at `~/.lore/sync`, synced to a private remote. It aggregates all of a user's sessions across every tool and repo for backup and cross-project search.
+
+The sync operation is fetch, merge, encrypt, push. Merges are newer-wins per session. Each session is gzipped then encrypted with AES-256-GCM using a key derived from a passphrase via Argon2id. The git host only ever sees ciphertext plus a minimal plaintext metadata file per session (id, tool, timestamps, message count, machine id, branch, and deliberately no file paths).
+
+Sync runs from the `pre-push` git hook (best-effort, never blocks the push) or when the user runs `lore sync`. The daemon is not involved in sync.
+
 ## Data Flow
 
 ### Import Flow
@@ -216,9 +243,19 @@ Tools exposed via MCP:
 5. Format output (text/json)
 ```
 
+### Sync Flow
+
+```
+1. User runs: lore sync (or git push fires the pre-push hook)
+2. Fetch the store ref/repo from the remote
+3. Decrypt and merge sessions not already in the local DB (newer wins)
+4. Encrypt unsynced local sessions (gzip -> AES-256-GCM)
+5. Push the updated store back to the remote
+```
+
 ## Design Principles
 
-1. **Local-first**: All data stays on your machine
+1. **Local-first**: All data stays on your machine; sync is opt-in and encrypted end to end
 2. **Tool-agnostic**: Same data model regardless of AI tool
 3. **Git-integrated**: Sessions are meaningful in the context of commits
 4. **Incremental**: Daemon only processes new content

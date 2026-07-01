@@ -5,6 +5,32 @@ description: Release history and version notes
 
 All notable changes to Lore are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Added
+
+- **Git-ref sync** - Sync reasoning history over git instead of a hosted service. No server, no account, serverless and free.
+  - `lore sync setup` - Set the passphrase for this repository's store
+  - `lore sync` - Fetch, merge others' reasoning, encrypt your unsynced sessions, and push
+  - `lore sync status` - Show setup, key, pending count, last sync time, and ref state (`--format text|json`)
+  - `--remote <name>` to sync a per-repo store with a remote other than `origin`
+  - **Per-repo store**: encrypted reasoning lives inside the project's own repo under `refs/lore/sessions` and rides on its existing remote, so reasoning travels with the code
+  - **Global personal store**: `lore sync --global setup` / `lore sync --global` / `lore sync --global status` manage a private aggregate of all your sessions at `~/.lore/sync`
+- **Automatic sync via pre-push hook** - `lore hooks install` now installs a `pre-push` hook that runs `lore sync` quietly on every `git push`, best-effort and never blocking the push
+- **Encrypted, zero-knowledge storage** - Sessions are gzipped then encrypted with AES-256-GCM using an Argon2id-derived key; the git host only sees ciphertext
+- **Team sharing without accounts** - Share the repo plus the passphrase out of band; no seats, no server
+- Config keys: `sync_global_remote`, `encryption_salt`, `use_keychain`
+
+### Changed
+
+- The background daemon is now optional and is no longer used for sync. It handles capture, auto-linking, and auto-summaries only. Sync runs from the pre-push hook or `lore sync`.
+
+### Removed
+
+- **Lore Cloud retired** - The hosted sync service (`lore login`, `lore cloud ...`) has been removed in favor of git-ref sync. The `cloud_url` config key is gone.
+
+---
+
 ## [0.1.13] - 2026-02-27
 
 ### Added

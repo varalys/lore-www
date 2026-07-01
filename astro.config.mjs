@@ -28,19 +28,10 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Cloud',
-					items: [
-						{ label: 'Overview', slug: 'cloud/overview' },
-						{ label: 'Pricing', slug: 'cloud/pricing' },
-						{ label: 'Authentication', slug: 'cloud/authentication' },
-						{ label: 'Pushing & Pulling', slug: 'cloud/sync' },
-						{ label: 'Encryption', slug: 'cloud/encryption' },
-					],
-				},
-				{
 					label: 'Guides',
 					items: [
 						{ label: 'Linking Sessions to Commits', slug: 'guides/linking' },
+						{ label: 'Syncing Reasoning History', slug: 'guides/sync' },
 						{ label: 'Searching Sessions', slug: 'guides/search' },
 						{ label: 'Using Blame', slug: 'guides/blame' },
 						{ label: 'Exporting Sessions', slug: 'guides/export' },

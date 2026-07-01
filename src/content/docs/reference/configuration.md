@@ -52,6 +52,26 @@ lore config set machine_name "work-laptop"
 
 Machine ID is a UUID generated on first run. Machine name is for human-readable identification.
 
+## Sync & Encryption
+
+Lore syncs reasoning history over git. These keys control the global store and encryption. See the [Syncing guide](/guides/sync/) for concepts.
+
+| Config Key | Description |
+|------------|-------------|
+| `sync_global_remote` | Remote URL for the global personal store (`~/.lore/sync`). Set by `lore sync --global setup` or manually. |
+| `encryption_salt` | Random salt used to derive the encryption key from your passphrase. A salt is not secret and is stored alongside the store. |
+| `machine_id` | UUID identifying this machine (also used by sync). Generated on first run. |
+| `machine_name` | Human-readable machine name. |
+| `use_keychain` | Store the derived encryption key in the OS keychain instead of a file. `true` uses the keychain; `false` uses a `0600` file under `~/.lore/sync-keys/`. |
+
+Set the global remote directly:
+
+```bash
+lore config set sync_global_remote git@github.com:you/lore-history.git
+```
+
+The passphrase itself is never stored in config. Only the derived key is cached locally (keychain or file). There is no passphrase recovery.
+
 ## Session Summaries
 
 Configure LLM-powered session summary generation. The recommended way to set this up is via the guided wizard:
