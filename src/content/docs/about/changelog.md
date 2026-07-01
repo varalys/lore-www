@@ -19,7 +19,7 @@ All notable changes to Lore are documented here. The format follows [Keep a Chan
 - **Automatic sync via pre-push hook** - `lore hooks install` now installs a `pre-push` hook that runs `lore sync` quietly on every `git push`, best-effort and never blocking the push
 - **Encrypted, zero-knowledge storage** - Sessions are gzipped then encrypted with AES-256-GCM using an Argon2id-derived key; the git host only sees ciphertext
 - **Team sharing without accounts** - Share the repo plus the passphrase out of band; no seats, no server
-- Config keys: `sync_global_remote`, `encryption_salt`, `use_keychain`
+- Config keys: `sync_global_remote`, `encryption_salt`, `machine_id`, `machine_name`, `use_keychain`
 
 ### Changed
 
