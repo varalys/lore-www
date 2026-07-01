@@ -5,6 +5,10 @@ description: Real-time session capture with the Lore daemon
 
 The daemon watches for new AI coding sessions in real-time and imports them automatically. It also handles **automatic session-to-commit linking** when sessions end.
 
+:::note[The daemon is optional]
+The daemon is not required, and it is **not** used for sync. It handles real-time capture, auto-linking, and auto-summaries only. You can import sessions on demand with `lore import`, and reasoning history syncs through the [pre-push hook](/commands/hooks/) or `lore sync`, whether or not the daemon is running. See the [Syncing guide](/guides/sync/).
+:::
+
 ## Manual Control
 
 ```bash
@@ -78,42 +82,8 @@ systemctl --user status lore.service
 - Tracks branch changes during sessions
 - **Automatically links sessions to commits** when sessions end
 - **Automatically generates session summaries** via LLM (if configured)
-- **Automatically syncs sessions to cloud** every 4 hours (if logged in)
 
-## Automatic Cloud Sync
-
-When logged in to Lore Cloud with encryption configured, the daemon automatically syncs your sessions every 4 hours. This ensures your sessions are backed up without manual intervention.
-
-### Requirements
-
-- Logged in via `lore login`
-- Encryption passphrase configured (prompted after login or on first push)
-
-### Checking Sync Status
-
-View when the next automatic sync will occur:
-
-```bash
-lore cloud status
-```
-
-Look for the "Next auto-sync" line in the output:
-
-```
-Local:
-  Total sessions:    95
-  Pending sync:      3
-  Last sync:         2 hours ago
-  Next auto-sync:    in 1 hour 58 minutes
-```
-
-### Manual Sync
-
-You can always sync manually without waiting:
-
-```bash
-lore cloud sync
-```
+The daemon does **not** sync reasoning history. Sync runs through the [pre-push hook](/commands/hooks/) or `lore sync`. See the [Syncing guide](/guides/sync/).
 
 ## Automatic Session Summaries
 

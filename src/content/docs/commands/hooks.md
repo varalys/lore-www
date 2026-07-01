@@ -24,6 +24,7 @@ lore hooks install
 Installing git hooks...
   Created .git/hooks/post-commit
   Created .git/hooks/prepare-commit-msg
+  Created .git/hooks/pre-push
 
 Hooks installed successfully.
 ```
@@ -49,6 +50,12 @@ Recent sessions:
 
 Runs before the commit message editor opens. Can add session references to commit messages.
 
+### pre-push
+
+Runs on `git push` and syncs your reasoning history alongside your code by running `lore sync` (quietly, best-effort). It never blocks the push, and a re-entry guard prevents the sync's own ref push from re-triggering the hook.
+
+If [sync](/guides/sync/) is not set up for the repository, or no key is stored, the hook does nothing and never prompts. Run `lore sync setup` first to activate it.
+
 ## Checking Status
 
 ```bash
@@ -62,6 +69,7 @@ Repository: /Users/dev/myapp
 
   post-commit:        Installed (lore)
   prepare-commit-msg: Installed (lore)
+  pre-push:           Installed (lore)
   pre-commit:         Not installed
 ```
 
@@ -84,6 +92,7 @@ lore hooks uninstall
 Removing git hooks...
   Removed .git/hooks/post-commit
   Removed .git/hooks/prepare-commit-msg
+  Removed .git/hooks/pre-push
 
 Hooks removed successfully.
 ```
@@ -108,3 +117,5 @@ Hooks are installed per-repository, not globally. Run `lore hooks install` in ea
 
 - [lore link](/commands/link/) - Manual linking
 - [Linking Sessions Guide](/guides/linking/) - Linking strategies
+- [lore sync](/commands/sync/) - Sync reasoning history over git
+- [Syncing Guide](/guides/sync/) - How the pre-push hook fits in

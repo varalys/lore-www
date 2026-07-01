@@ -29,6 +29,15 @@ This section documents all Lore commands. Run `lore --help` for a quick overview
 | `lore summarize` | Add/view session summaries |
 | `lore delete` | Delete a session |
 
+## Sync
+
+| Command | Description |
+|---------|-------------|
+| `lore sync setup` | Set the passphrase for this repository's store |
+| `lore sync` | Sync reasoning history over git |
+| `lore sync status` | Show sync status |
+| `lore sync --global` | Sync the global personal store |
+
 ## Daemon
 
 | Command | Description |
