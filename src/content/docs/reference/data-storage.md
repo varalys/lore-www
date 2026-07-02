@@ -38,6 +38,11 @@ The SQLite database contains:
 - **tags**: Labels attached to sessions
 - **annotations**: Notes/bookmarks on sessions
 - **summaries**: Session summaries for quick reference
+- **memories**: Read-only mirror of a coding tool's per-project memory store
+
+## Mirrored Memories
+
+The `memories` table holds a read-only mirror of a coding tool's per-project memory store (currently Claude Code). Lore reads the tool's memory folder and reflects it into the database, scoped per project; it never creates, modifies, or deletes the source files. The mirror is refreshed on read whenever you run [`lore memories`](/commands/memories/) or query the memory MCP tools, so it always matches the current folder. See [Cross-Tool Memory](/guides/memory/) for details.
 
 ## Full-Text Search
 
