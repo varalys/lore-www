@@ -94,4 +94,5 @@ Security updates are provided for the latest minor version. We recommend keeping
 
 | Version | Supported |
 |---------|-----------|
-| 0.1.x   | Yes       |
+| 0.2.x   | Yes       |
+| < 0.2.0 | No        |
