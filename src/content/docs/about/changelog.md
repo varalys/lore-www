@@ -7,6 +7,8 @@ All notable changes to Lore are documented here. The format follows [Keep a Chan
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-01
+
 ### Added
 
 - **Git-ref sync** - Sync reasoning history over git instead of a hosted service. No server, no account, serverless and free.
@@ -19,6 +21,8 @@ All notable changes to Lore are documented here. The format follows [Keep a Chan
 - **Automatic sync via pre-push hook** - `lore hooks install` now installs a `pre-push` hook that runs `lore sync` quietly on every `git push`, best-effort and never blocking the push
 - **Encrypted, zero-knowledge storage** - Sessions are gzipped then encrypted with AES-256-GCM using an Argon2id-derived key; the git host only sees ciphertext
 - **Team sharing without accounts** - Share the repo plus the passphrase out of band; no seats, no server
+- **Deletion propagation** - Child-record deletions (links, tags, annotations, summaries) propagate across machines via tombstones, without losing concurrent additions
+- **Cross-tool memory** - Mirror a tool's per-project memory and read it from any LLM over MCP. `lore memories` lists it; `lore_get_memories` and `lore_search_memories` expose it. Currently mirrors Claude Code memory (read-only); more tools planned
 - Config keys: `sync_global_remote`, `encryption_salt`, `machine_id`, `machine_name`, `use_keychain`
 
 ### Changed
@@ -28,6 +32,11 @@ All notable changes to Lore are documented here. The format follows [Keep a Chan
 ### Removed
 
 - **Lore Cloud retired** - The hosted sync service (`lore login`, `lore cloud ...`) has been removed in favor of git-ref sync. The `cloud_url` config key is gone.
+
+### Fixed
+
+- Security: upgraded `rmcp` (RUSTSEC-2026-0189) and `git2` (unsoundness advisories); resolved new clippy lints.
+- Per-repo `lore sync` pushes only the current repository's sessions (it previously pushed all sessions), preventing cross-project reasoning from leaking into a shared store.
 
 ---
 
