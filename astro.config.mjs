@@ -35,6 +35,7 @@ export default defineConfig({
 						{ label: 'Searching Sessions', slug: 'guides/search' },
 						{ label: 'Using Blame', slug: 'guides/blame' },
 						{ label: 'Exporting Sessions', slug: 'guides/export' },
+						{ label: 'Cross-Tool Memory', slug: 'guides/memory' },
 						{ label: 'MCP Server Integration', slug: 'guides/mcp' },
 						{ label: 'Background Daemon', slug: 'guides/daemon' },
 					],

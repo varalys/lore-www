@@ -97,6 +97,10 @@ The MCP server exposes these tools to AI assistants:
 | `lore_list_sessions` | List recent sessions with optional filters |
 | `lore_get_context` | Get recent session context for a repository |
 | `lore_get_linked_sessions` | Get sessions linked to a git commit |
+| `lore_get_memories` | Get a repository's memories mirrored from a coding tool's memory store |
+| `lore_search_memories` | Full-text search a repository's mirrored memories |
+
+The memory tools let one tool read another tool's per-project memory. See [Cross-Tool Memory](/guides/memory/) for the workflow.
 
 ## Example Usage
 

@@ -27,6 +27,7 @@ This section documents all Lore commands. Run `lore --help` for a quick overview
 | `lore tag` | Add/remove labels on sessions |
 | `lore annotate` | Add notes to sessions |
 | `lore summarize` | Add/view session summaries |
+| `lore memories` | List a repository's mirrored memories |
 | `lore unlink` | Remove a session-commit link |
 | `lore delete` | Delete a session |
 
